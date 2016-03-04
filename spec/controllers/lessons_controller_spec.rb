@@ -17,6 +17,8 @@ RSpec.describe LessonsController, type: :controller do
 	end
 
 	describe 'GET /# show' do
+		it 'returns an http success'
+
 		it 'returns a single lesson'
 
 		it 'returns the correct lesson'
@@ -30,6 +32,8 @@ RSpec.describe LessonsController, type: :controller do
 	end
 
 	describe 'GET /new create' do
+		it 'returns an http success'
+
 		it 'shows a form for a new lesson'
 
 		it 'adds a new lesson when form is submitted'
@@ -37,6 +41,8 @@ RSpec.describe LessonsController, type: :controller do
 		it 'does not repeat lesson urls'
 
 		it 'does not allow to submit a lesson unless everything in the form is filled out'
+
+		it 'keeps the admin on the form to create a new one'
 	end
 
 end
