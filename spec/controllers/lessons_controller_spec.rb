@@ -6,6 +6,7 @@ RSpec.describe LessonsController, type: :controller do
 		it 'returns an http success' do
 			get :index
 			expect(response).to be_success
+
 		end
 	end
 
