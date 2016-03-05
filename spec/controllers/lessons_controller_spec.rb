@@ -1,19 +1,25 @@
-require 'rails_helper'
+require 'spec_helper'
+require 'pry'
 
 RSpec.describe LessonsController, type: :controller do
 
 	describe 'GET / index' do
+		let(:lesson1) {FactoryGirl.create(:lesson)}
+		let(:lesson2) {FactoryGirl.create(:lesson)}
+
 		it 'returns an http success' do
 			get :index
 			expect(response).to be_success
 
 		end
 
-		it 'returns all the lessons'
+		it 'returns all the lessons' do
+			get :index
+			expect(assigns[:lessons]).to eq([])
+			expect(assigns[:lessons]).to eq([lesson1, lesson2])
 
-		it 'shows all the lessons'
+		end
 
-		it 'has a summary of each lesson'
 	end
 
 	describe 'GET /# show' do
