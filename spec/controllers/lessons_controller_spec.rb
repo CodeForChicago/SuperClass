@@ -14,10 +14,12 @@ RSpec.describe LessonsController, type: :controller do
 		end
 
 		it 'returns all the lessons' do
-			get :index
+			get :index 
 			expect(assigns[:lessons]).to eq([])
-			expect(assigns[:lessons]).to eq([lesson1, lesson2])
-
+			# this causes the lessons to be created 
+			lessons = [lesson1, lesson2]
+			# use `.reload` to force a new query:
+			expect(assigns[:lessons].reload).to eq(lessons)
 		end
 
 	end
