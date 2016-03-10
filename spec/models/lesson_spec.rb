@@ -25,4 +25,12 @@ RSpec.describe Lesson, type: :model do
 		expect(FactoryGirl.build(:lesson, title: nil)).to_not be_valid
 		expect(FactoryGirl.build(:lesson, title: '')).to_not be_valid
 	end
+
+	it 'is invalid with repeat urls'
+
+	it 'is invalid with repeat title+creator'
+
+	it 'does not allow to submit a lesson unless all fields are not null'
+
+	it 'returns descriptive error messages'
 end
