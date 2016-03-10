@@ -31,26 +31,24 @@ RSpec.describe LessonsController, type: :controller do
 
 		it 'returns the correct lesson'
 
-		it 'shows a body for the lesson'
+	end
 
-		it 'shows the creator of the lesson'
-
-		it 'shows the creator of the lesson'
+	describe 'GET /new' do
+		it 'returns an http success when form loaded'
 
 	end
 
-	describe 'GET /new create' do
-		it 'returns an http success'
+	describe 'POST / create' do
+		it 'returns an http created when lesson saved'
 
-		it 'shows a form for a new lesson'
+		it 'returns an http failed when lesson not saved'
+
+		it 'returns model message when lesson not saved'
 
 		it 'adds a new lesson when form is submitted'
 
-		it 'does not repeat lesson urls'
-
-		it 'does not allow to submit a lesson unless everything in the form is filled out'
-
 		it 'keeps the admin on the form to create a new one'
+
 	end
 
 end
