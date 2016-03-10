@@ -12,4 +12,22 @@ feature "Lessons Page" do
 		expect(page).to have_content(lesson2.body)
 	end
 
+	scenario "viewing lesson page" do
+		#TODO: test following happens
+		#it 'shows a body for the lesson'
+
+		#it 'shows the creator of the lesson'
+
+		#it 'links individual to correct lesson url'
+	end
+
+	scenario "new lesson page" do
+		#TODO: test following occur
+		#admin has form to fill for new test
+		#error msg if not everything is filled in
+		#success msg if the lesson goes through
+		#stays on same form after submit (cleared)
+	end
+		
+
 end
