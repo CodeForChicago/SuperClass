@@ -3,10 +3,10 @@ require 'pry'
 
 RSpec.describe LessonsController, type: :controller do
 
-	describe 'GET / index' do
-		let(:lesson1) {FactoryGirl.create(:lesson)}
-		let(:lesson2) {FactoryGirl.create(:lesson)}
+	let(:lesson1) {FactoryGirl.create(:lesson)}
+	let(:lesson2) {FactoryGirl.create(:lesson)}
 
+	describe 'GET / index' do
 		it 'returns an http success' do
 			get :index
 			expect(response).to be_success
@@ -25,7 +25,10 @@ RSpec.describe LessonsController, type: :controller do
 	end
 
 	describe 'GET /# show' do
-		it 'returns an http success'
+		it 'returns an http success' do
+			get :show, id: lesson1.id
+			expect(response).to be_success
+		end
 
 		it 'returns a single lesson'
 
