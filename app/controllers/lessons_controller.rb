@@ -3,7 +3,7 @@ class LessonsController < ApplicationController
 		@lessons = Lesson.all
 	end
 	
-	def show
-		head :ok
+	def show	
+		@lesson = Lesson.first
 	end
 end
