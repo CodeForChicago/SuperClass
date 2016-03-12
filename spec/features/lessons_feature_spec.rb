@@ -6,6 +6,7 @@ feature "Lessons Page" do
 
 	scenario "viewing lessons page" do
 		visit lessons_path
+		puts lessons_path
 		expect(page).to have_content(lesson1.title)
 		expect(page).to have_content(lesson2.title)
 		expect(page).to have_content(lesson1.body)
@@ -14,6 +15,8 @@ feature "Lessons Page" do
 
 	scenario "viewing lesson page" do
 		#TODO: test following happens
+		visit "/lessons/1"
+		expect(page).to have_content(lesson1.body)
 		#it 'shows a body for the lesson'
 
 		#it 'shows the creator of the lesson'
