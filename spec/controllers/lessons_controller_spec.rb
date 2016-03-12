@@ -30,7 +30,11 @@ RSpec.describe LessonsController, type: :controller do
 			expect(response).to be_success
 		end
 
-		it 'returns a single lesson'
+		it 'returns a single lesson' do
+			get :show, id: lesson1.id
+			expect(assigns[:lesson].body).to eq(lesson1.body)
+		end
+
 
 		it 'returns the correct lesson'
 
