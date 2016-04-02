@@ -1,4 +1,10 @@
 class AddDeviseToUsers < ActiveRecord::Migration
+	def change
+		create_table :users do |t|
+			t.timestamps null: false
+		end
+	end
+
   def self.up
     change_table(:users) do |t|
       ## Database authenticatable
@@ -31,8 +37,6 @@ class AddDeviseToUsers < ActiveRecord::Migration
       # t.datetime :locked_at
 
 
-      # Uncomment below if timestamps were not included in your original model.
-      t.timestamps
     end
 
     add_index :users, :email,                unique: true
