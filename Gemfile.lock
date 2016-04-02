@@ -210,7 +210,7 @@ DEPENDENCIES
   byebug
   capybara
   coffee-rails (~> 4.1.0)
-  devise (= 3.4.1)
+  devise
   factory_girl_rails
   faker
   jbuilder (~> 2.0)
