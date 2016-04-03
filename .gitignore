@@ -13,4 +13,4 @@
 /tmp
 
 # For vim, ignore swap files
-.swp
+*.swp
