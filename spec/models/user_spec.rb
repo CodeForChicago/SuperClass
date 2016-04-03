@@ -13,6 +13,7 @@ describe User, type: :model do
 		same_email = "cfcrockz@gmail.com"
 		FactoryGirl.create(:user, email: same_email )
 		expect(FactoryGirl.build(:user, email: same_email )).to_not be_valid
+		expect(FactoryGirl.build(:user, email: same_email.upcase )).to_not be_valid
 	end
 
 	it 'is invalid without a full name'
