@@ -14,8 +14,8 @@ feature "Lessons Page" do
 	end
 
 	scenario "viewing lesson page" do
-		#TODO: test following happens
-		visit "/lessons/1"
+		visit "lessons/#{lesson1.id}"
+		expect(page).to have_content(lesson1.title)
 		expect(page).to have_content(lesson1.body)
 		#it 'shows a body for the lesson'
 
@@ -31,6 +31,4 @@ feature "Lessons Page" do
 		#success msg if the lesson goes through
 		#stays on same form after submit (cleared)
 	end
-		
-
 end
