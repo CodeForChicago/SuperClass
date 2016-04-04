@@ -1,4 +1,5 @@
 require 'spec_helper'
+require "pry"
 
 feature "Lessons Page" do
 	let!(:lesson1) {FactoryGirl.create(:lesson)}
@@ -15,13 +16,12 @@ feature "Lessons Page" do
 
 	scenario "viewing lesson page" do
 		visit "lessons/#{lesson1.id}"
+		puts  "lessons/#{lesson1.id}"
 		expect(page).to have_content(lesson1.title)
 		expect(page).to have_content(lesson1.body)
-		#it 'shows a body for the lesson'
-
-		#it 'shows the creator of the lesson'
-
-		#it 'links individual to correct lesson url'
+		expect(page).to have_content(lesson1.author)
+		expect(page).to have_content(lesson1.url)
+		expect(page).to have_content(lesson1.updated_at)
 	end
 
 	scenario "new lesson page" do
