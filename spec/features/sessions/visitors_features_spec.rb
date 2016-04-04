@@ -5,6 +5,8 @@ feature 'Sign Up' do
         fill_in 'Email', with: "datcfc@gmail.com"
         fill_in 'Password', with: "cfcrulez"
         fill_in 'Password confirmation', with: "cfcrulez"
+        fill_in 'First name', with: "Codeniferous"
+        fill_in 'Last name', with: "Chicageous"
         click_button 'Sign up'
         expect(page).to have_content(/.*devise.registrations.signed_up.*|.*devise.registrations.signed_up_but_unconfirmed.*/)
     end 
