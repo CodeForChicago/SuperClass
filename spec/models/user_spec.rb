@@ -16,7 +16,13 @@ describe User, type: :model do
 		expect(FactoryGirl.build(:user, email: same_email.upcase )).to_not be_valid
 	end
 
-	it 'is invalid without a full name'
+	it 'is invalid without a first name' do
+		expect(FactoryGirl.build(:user, first_name: nil)).to_not be_valid
+	end
+
+	it 'is invalid without a last name' do
+		expect(FactoryGirl.build(:user, last_name: nil)).to_not be_valid
+	end
 
 	it 'is invalid without a password' do
 		expect(FactoryGirl.build(:user, password: nil)).to_not be_valid
