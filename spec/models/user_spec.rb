@@ -28,9 +28,13 @@ describe User, type: :model do
 		expect(FactoryGirl.build(:user, password: nil)).to_not be_valid
 	end
 
-	it 'is invalid without a role'
+	it 'is invalid without a role' do 
+		expect(FactoryGirl.build(:user, role: nil)).to_not be_valid
+	end 
 
-	it 'has a default role of student'
+	it 'has a default role of student' do 
+		expect(FactoryGirl,build(:user, role: :student)).to be_valid
+	end 
 
 	it 'can have an admin role'
 
