@@ -18,6 +18,12 @@ class LessonsController < ApplicationController
 	end
 	
 	def create
-
+		binding.pry
+		@lesson = Lesson.new
+		args = self.request.filtered_parameters
+		# Lesson.create(author: "ben",title: "title",body: \
+						# "this is the body", url: "google.com")
+		Lesson.create(author: args['author'], title: args['title'],\
+					body: args['body'], url: args['url'])
 	end
 end
