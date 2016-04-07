@@ -4,7 +4,7 @@ require 'pry'
 RSpec.describe LessonsController, type: :controller do
 
 	let(:lesson1) {FactoryGirl.create(:lesson)}
-	let(:lesson2) {FactoryGirl.create(:lesson)}
+	let(:lesson2) {FactoryGirl.create(:lesson, body: "Mashed potatoes")}
 
 	describe 'GET / index' do
 		it 'returns an http success' do
@@ -30,25 +30,12 @@ RSpec.describe LessonsController, type: :controller do
 
 		it 'returns a single lesson' do
 			get :show, id: lesson1.id
-			expect(assigns[:lesson].body).to eq(lesson1.body)
+			expect(assigns[:lesson]).to eq(lesson1)
 		end
 
 		it 'returns the correct lesson' do
-			get :show, id: lesson1.id
-			expect(assigns[:lesson].id).to eq(lesson1.id)
-			expect(assigns[:lesson].author).to eq(lesson1.author)
-			expect(assigns[:lesson].title).to eq(lesson1.title)
-			expect(assigns[:lesson].url).to eq(lesson1.url)
-			
-			# We have to round the times off to prevent tests from failing
-			# due to sub-millisecond level time discrepancies
-			# the round method takes int arguments to specify how many digits
-			# after the seconds number to return: eg: round(3) will give up to 
-			# milliseconds, while no argument rounds it to the nearest second
-			expect(assigns[:lesson].created_at.round).to \
-						eq(lesson1.created_at.round)
-			expect(assigns[:lesson].updated_at.round).to \
-						eq(lesson1.updated_at.round)
+			get :show, id: lesson2.id
+			expect(assigns[:lesson]).to eq(lesson2)
 		end
 	end
 

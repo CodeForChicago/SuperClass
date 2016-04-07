@@ -10,7 +10,7 @@ class LessonsController < ApplicationController
 		# @lesson = Lesson.find(id_num)
 		
 		# Here's the actual code for doing so; it's ugly, but it passes our tests thus far
-		@lesson = Lesson.find(self.request.filtered_parameters["id"])
+		@lesson = Lesson.find(params[:id])
 	end
 		
 	def new
