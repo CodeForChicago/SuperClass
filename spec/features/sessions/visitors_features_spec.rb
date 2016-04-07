@@ -1,13 +1,13 @@
+RSpec.configure do |c|
+	  c.include Helpers::SessionsHelper
+end
+
 feature 'Sign Up' do
     
     scenario 'visitor can sign up with valid email address and password' do
         visit new_user_registration_path
-        fill_in 'Email', with: "datcfc@gmail.com"
-        fill_in 'Password', with: "cfcrulez"
-        fill_in 'Password confirmation', with: "cfcrulez"
-        fill_in 'First name', with: "Codeniferous"
-        fill_in 'Last name', with: "Chicageous"
-        click_button 'Sign up'
+				sign_up_with("datcfc@gmail.com", "cfcrulez", "cfcrulez", "Codeniferous", "Chicageous")
+ 				click_button 'Sign up'
         expect(page).to have_content(/.*devise.registrations.signed_up.*|.*devise.registrations.signed_up_but_unconfirmed.*/)
     end 
     
