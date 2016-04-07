@@ -33,7 +33,7 @@ describe User, type: :model do
 	end 
 
 	it 'has a default role of student' do 
-		expect(FactoryGirl,build(:user, role: :student)).to be_valid
+		expect(FactoryGirl.build(:user, role: :student)).to be_valid
 	end 
 
 	it 'can have an admin role'
