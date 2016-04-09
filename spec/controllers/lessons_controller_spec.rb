@@ -6,7 +6,7 @@ RSpec.describe LessonsController, type: :controller do
 	let(:lesson1) {FactoryGirl.create(:lesson)}
 	let(:lesson2) {FactoryGirl.create(:lesson, body: "Mashed potatoes")}
 
-	describe 'GET / index' do
+	describe 'GET / index', :focus => true do
 		it 'returns an http success' do
 			get :index
 			expect(response).to be_success
