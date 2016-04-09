@@ -20,8 +20,6 @@ feature "Lessons Page" do
 		expect(page).to have_content(lesson1.title)
 		expect(page).to have_content(lesson1.body)
 		expect(page).to have_content(lesson1.author)
-		expect(page).to have_content(lesson1.url)
-		# expect(page).to have_content(lesson1.updated_at)
 		expect(page).to have_content("Take me there!")
 	end
 
