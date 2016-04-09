@@ -7,6 +7,13 @@ module Helpers
         fill_in 'First name', with: f_name
         fill_in 'Last name', with: l_name
 		end
+		
+		def signin(email, password)
+		  fill_in 'Email', with: email 
+		  fill_in 'Password', with: password
+		end 
+		
+		
 
 	end
 end
