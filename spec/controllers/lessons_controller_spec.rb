@@ -5,7 +5,8 @@ RSpec.describe LessonsController, type: :controller do
 
 	describe 'GET / index' do
 		let(:lesson1) {FactoryGirl.create(:lesson)}
-		let(:lesson2) {FactoryGirl.create(:lesson)}
+		let(:lesson2) {FactoryGirl.create(:lesson)}  # , url: "securl", author: "Juan")}
+		let(:lesson3) {FactoryGirl.create(:lesson)}  #, title: "firsturl", author: "agam")}
 
 		it 'returns an http success' do
 			get :index

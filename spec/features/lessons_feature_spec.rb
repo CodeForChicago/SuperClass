@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 feature "Lessons Page" do
-	let!(:lesson1) {FactoryGirl.create(:lesson)}
-	let!(:lesson2) {FactoryGirl.create(:lesson)}
+	let!(:lesson1) {FactoryGirl.create(:lesson)} #, url: "firsturl")}
+	let!(:lesson2) {FactoryGirl.create(:lesson)} #, url: "securl")}
 
 	scenario "viewing lessons page" do
 		visit lessons_path
