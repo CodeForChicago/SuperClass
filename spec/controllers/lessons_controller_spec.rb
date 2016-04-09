@@ -46,7 +46,7 @@ RSpec.describe LessonsController, type: :controller do
 		end
 		
 		it 'returns a valid form, with fields for all necessary information' do
-			
+
 		end
 	end
 

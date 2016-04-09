@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-	
+
+  match '/feedback', to: 'feedback#new', via: 'get'
+  resources "feedback", only: [:new, :create]
 	resources :lessons
 
   # The priority is based upon order of creation: first created -> highest priority.
