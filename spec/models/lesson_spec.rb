@@ -19,7 +19,6 @@ RSpec.describe Lesson, type: :model do
 		expect(FactoryGirl.build(:lesson, url: nil)).to_not be_valid
 		expect(FactoryGirl.build(:lesson, url: '')).to_not be_valid
 	end
-		
 
 	it 'is invalid without a title' do
 		expect(FactoryGirl.build(:lesson, title: nil)).to_not be_valid
