@@ -36,11 +36,11 @@ RSpec.describe Lesson, type: :model do
 		expect(FactoryGirl.build(:lesson, title: lesson3.title, author: lesson3.author)).to_not be_valid
 	end
 	
-	it 'returns descriptive error messages' do 
+	it 'returns descriptive error messages', :focus do 
 		# Error message for duplicate urls
 		lesson1 = FactoryGirl.create(:lesson)
 		lesson2 = FactoryGirl.build(:lesson, url: lesson1.url)
-		lesson2.save
+		#lesson2.save
 		lesson3 = FactoryGirl.build(:lesson, title: lesson1.title, author: lesson1.author)
 		lesson3.save
 		lesson4 = FactoryGirl.build(:lesson, title: ' ')
@@ -60,16 +60,16 @@ RSpec.describe Lesson, type: :model do
 		lesson11 = FactoryGirl.build(:lesson, url: nil)
 		lesson11.save
 		
-		expect { raise StandardError, lesson2.errors.messages[:url][0]}.to raise_error("This url has already been taken!")
-		expect { raise StandardError, lesson3.errors.messages[:title][0]}.to raise_error("Another entry by the author already exists!")
-		expect { raise StandardError, lesson4.errors.messages[:title][0]}.to raise_error("Empty entry not allowed")
-		expect { raise StandardError, lesson5.errors.messages[:author][0]}.to raise_error("Empty entry not allowed")
-		expect { raise StandardError, lesson6.errors.messages[:body][0]}.to raise_error("Empty entry not allowed")
-		expect { raise StandardError, lesson7.errors.messages[:url][0]}.to raise_error("Empty entry not allowed")
-		expect { raise StandardError, lesson8.errors.messages[:title][0]}.to raise_error("Empty entry not allowed")
-		expect { raise StandardError, lesson9.errors.messages[:author][0]}.to raise_error("Empty entry not allowed")
-		expect { raise StandardError, lesson10.errors.messages[:body][0]}.to raise_error("Empty entry not allowed")
-		expect { raise StandardError, lesson11.errors.messages[:url][0]}.to raise_error("Empty entry not allowed")
+		expect { lesson2.errors.messages[:url][0]}.to eq("This url has already been taken!")
+		expect { lesson3.errors.messages[:title][0]}.to eq("Another entry by the author already exists!")
+		expect { lesson4.errors.messages[:title][0]}.to eq("Empty entry not allowed")
+		expect { lesson5.errors.messages[:author][0]}.to eq("Empty entry not allowed")
+		expect { lesson6.errors.messages[:body][0]}.to eq("Empty entry not allowed")
+		expect { lesson7.errors.messages[:url][0]}.to eq("Empty entry not allowed")
+		expect { lesson8.errors.messages[:title][0]}.to eq("Empty entry not allowed")
+		expect { lesson9.errors.messages[:author][0]}.to eq("Empty entry not allowed")
+		expect { lesson10.errors.messages[:body][0]}.to eq("Empty entry not allowed")
+		expect { lesson11.errors.messages[:url][0]}.to eq("Empty entry not allowed")
 		#expect{FactoryGirl.create(:lesson, url: lesson1.url)}.to raise_error("This url has already been taken")
 	end
 end
