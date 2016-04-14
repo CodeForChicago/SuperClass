@@ -74,7 +74,6 @@ RSpec.describe LessonsController, type: :controller do
 		# this one may be taken care of by the lesson model, so we may not need to
 		# test it here
 		it 'doesn\'t create a duplicate lesson'
-
+		end
 	end
-
 end
