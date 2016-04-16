@@ -24,7 +24,7 @@ feature 'Sign in', :devise do
     signin(user.email, user.password)
     # signin('livinglife@gmil.com', 'smdfreestyle')
     click_button 'Log in'
-    expect(page).to have_content I18n.t 'devise.sessions.signed_in' 
+    expect(page).to have_content I18n.t "devise.sessions.signed_in"
   end 
 
   #Scenario: User cannot sign in if email/password combination incorrect 
