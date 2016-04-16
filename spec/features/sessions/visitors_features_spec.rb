@@ -9,7 +9,6 @@ feature 'Sign Up' do
 	email = "datcfc@gmail.com"
     
     scenario 'visitor can sign up with valid email address and password' do
-    		binding.pry
         visit new_user_registration_path
 				sign_up_with(email, password, password, f_name, l_name)
  				click_button 'Sign up'
