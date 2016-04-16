@@ -21,7 +21,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # for mailing feedback
-# gem 'mail_form'
+gem "mail_form", ">= 1.3.0"
 # gem 'simple_form'
 
 # for testing both here and on production
