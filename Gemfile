@@ -10,6 +10,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
+#user session
+gem 'devise'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -19,6 +21,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+# for mailing feedback
+# gem 'mail_form'
+# gem 'simple_form'
 
 # for testing both here and on production
 gem 'rspec-rails', '~> 3.0'
@@ -48,6 +54,9 @@ group :development, :test do
   gem 'faker'
   
   gem 'watchr'
+  
+  # running faster tests
+  gem 'spring'
 end
 
 gem 'rails_12factor', group: :production
