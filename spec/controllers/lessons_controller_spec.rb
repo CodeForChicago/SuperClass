@@ -1,10 +1,7 @@
-require 'spec_helper'
-require 'pry'
-
 RSpec.describe LessonsController, type: :controller do
 		let(:lesson1) {FactoryGirl.create(:lesson)}
-		let(:lesson2) {FactoryGirl.create(:lesson)}  # , url: "securl", author: "Juan")}
-		let(:lesson3) {FactoryGirl.create(:lesson)}  #, title: "firsturl", author: "agam")}
+		let(:lesson2) {FactoryGirl.create(:lesson)}
+		let(:lesson3) {FactoryGirl.create(:lesson)}
 
 	describe 'GET / index' do
 

@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Lesson, type: :model do
 	it 'has a factory' do
 		expect(FactoryGirl.create(:lesson)).to be_valid
