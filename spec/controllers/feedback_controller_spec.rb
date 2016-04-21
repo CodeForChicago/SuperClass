@@ -1,6 +1,9 @@
-require 'spec_helper'
-require "pry"
 
-feature "Feedback Page" do
-	let!(:feedback1) {FactoryGirl.create(:feedback)}
-end 
+require "spec_helper"
+
+feature "feedback_page" do
+    scenario "user sends feedback" do
+        visit "/feedback"
+    end
+end
+
