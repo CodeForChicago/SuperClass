@@ -25,7 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # for mailing feedback
  gem 'mail_form'
  gem 'simple_form'
-gem "mail_form", ">= 1.3.0"
+ gem "mail_form", ">= 1.3.0"
 
 # for testing both here and on production
 gem 'rspec-rails', '~> 3.0'
