@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :questions
   
-  enum role: [:admin, :student]
+  enum role: [:admin, :student, :org_leader]
 	before_validation :set_default_role
   
   
