@@ -6,7 +6,7 @@ class Feedback < MailForm::Base
   def headers
     {
       :subject => "CFC Feedback Form",
-      :to => "your_email@example.org",
+      :to => "codeforchicago@u.northwestern.edu",
       :from => %("#{name}" <#{email}>)
     }
   end
