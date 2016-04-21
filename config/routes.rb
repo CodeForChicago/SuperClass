@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :lessons
   resources :questions
-  match '/feedback', to: 'feedback#new', via: 'get'
+  match '/feedback',     to: 'feedback#new',             via: 'get'
   resources "feedback", only: [:new, :create]
-
     
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
