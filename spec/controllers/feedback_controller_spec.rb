@@ -1,3 +1,4 @@
+
 require "spec_helper"
 
 feature "feedback_page" do
@@ -5,3 +6,4 @@ feature "feedback_page" do
         visit "/feedback"
     end
 end
+

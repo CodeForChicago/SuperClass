@@ -14,3 +14,4 @@ class Feedback < MailForm::Base
     }
   end
 end
+
