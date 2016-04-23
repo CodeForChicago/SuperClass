@@ -9,7 +9,8 @@ feature "Feedback Page" do
 		fill_in 'Name', with: 'wayne rooney'
 		fill_in 'Feedback', with: 'manchester is red'
 		click_button 'Send message'
-		expect(page).to have_content 'We appreciate your feedback!'
+		expect(page).to have_content 'We appreciate your feedback! We will review your
+                            message and try to improve our website soon.'
 	end
 	
 end 

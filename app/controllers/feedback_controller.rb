@@ -9,7 +9,7 @@ class FeedbackController < ApplicationController
     @feedback = Feedback.new(params[:feedback])
     @feedback.request = request
     if @feedback.deliver
-      flash.now[:notice] = 'Thank you for your feedback.  We will review your
+      flash.now[:notice] = 'We appreciate your feedback! We will review your
                             message and try to improve our website soon.'
     else
       flash.now[:error] = 'Cannot send message.'
