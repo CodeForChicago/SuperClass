@@ -6,9 +6,7 @@ var  WelcomePage = React.createClass({
   return ( <div className = "container"> // size 100
             <div className = "row"> // size 60%
               <div className = "col-md-9">
-                <div className = "row firstRow_for_css">  //.firstRow_for_css {
-                                                          // background: blue;
-                                                          //  }
+                <div className = "row firstRow_for_css">
                   <FirstRow />
                 <PsuedoRow />
                 </div>
@@ -33,7 +31,7 @@ var FirstRow = React.createClass({
   render: function() {
 
 
-  return ()
+  return (<div></div>)
 
 
 }});
@@ -42,7 +40,7 @@ var SecondRow = React.createClass({
   render: function() {
 
 
-  return ()
+  return (<div></div>)
 
 
 }});
@@ -67,7 +65,7 @@ var ThirdRow = React.createClass({
 var Fixed = React.createClass({
   render: function () {
 
-    return ()
+    return (<div></div>)
 
 
 }});
