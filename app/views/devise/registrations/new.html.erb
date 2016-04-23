@@ -13,14 +13,10 @@
     <%= f.text_field :last_name, autofocus: true %>
   </div>
   
-  <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-      <div id="myDropdown" class="dropdown-content">
-        <a> Link 1 </a>
-        <a> Link 2 </a>
-        <a> Link 3 </a>
-    </div>
-  </div>
+  <%= simple_form_for @user do |f| %>
+    <%= f.input :role, collection: ["Student", "Organization Leader"] %>
+  <% end %>
+  
   
   <div class="field">
     <%= f.label :email %><br />
