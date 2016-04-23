@@ -10,6 +10,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
+#user session
+gem 'devise'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -21,8 +23,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # for mailing feedback
-gem "mail_form", ">= 1.3.0"
-gem 'simple_form'
+ gem 'simple_form'
+ gem "mail_form", ">= 1.3.0"
+
 
 # for testing both here and on production
 gem 'rspec-rails', '~> 3.0'

@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  root to: "home#index"
+  devise_for :users
+  resources :lessons
+  resources :questions
+  match '/feedback',     to: 'feedback#new',             via: 'get'
+  resources "feedback", only: [:new, :create]
+    
 
   match '/feedback', to: 'feedback#new', via: 'get'
   resources :feedback
