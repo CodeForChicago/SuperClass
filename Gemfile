@@ -12,7 +12,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 #user session
 gem 'devise'
-
+# Use rails-api to add functionality for a rails application
+gem 'rails-api'
+# Use react-rails to integrate between rails and react
 gem 'react-rails', '~> 1.6.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
