@@ -6,19 +6,6 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-# Mailer Settings
-ActionMailer::Base.delivery_method = :smtp
-ActionMailer::Base.perform_deliveries = true
-
-ActionMailer::Base.smtp_settings = {
-  address: ENV['EMAIL_ADRS'],
-  port: "587",
-  domain: ENV['EMAIL_DOMAIN'],
-  user_name: ENV['EMAIL_UNME'],
-  password: ENV['EMAIL_PW'],
-  authentication: 'plain',
-  enable_starttls_auto: true
-}
 
 module Superclass
   class Application < Rails::Application
@@ -37,6 +24,7 @@ module Superclass
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
+		#add local dev variables to environment
     config.before_configuration do
         env_file = File.join(Rails.root, 'config', 'local_env.yml')
         YAML.load(File.open(env_file)).each do |key, value|
