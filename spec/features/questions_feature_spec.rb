@@ -15,4 +15,12 @@ feature "Questions Page" do
         expect(page).to have_content(question2.user.first_name)
         expect(page).to have_content(question2.user.last_name)
     end
+    
+    scenario "viewing question page" do
+        visit "questions/#{question1.id}"
+        expect(page).to have_content(question1.title)
+        expect(page).to have_content(question1.body)
+        expect(page).to have_content(question1.user.first_name)
+        expect(page).to have_content(question1.user.last_name)
+    end
 end
