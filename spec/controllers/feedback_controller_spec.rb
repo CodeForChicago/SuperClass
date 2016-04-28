@@ -18,7 +18,7 @@ describe FeedbackController, type: :controller do
                     feedback: {
                         name: 'wayne rooney',
                         email: 'manchesterisred@cfc.com',
-                        feedback: 'manchesterisred',
+                        message: 'manchesterisred',
                     }
                 }
             }.to change{ActionMailer::Base.deliveries.count}.by(1)
