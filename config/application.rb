@@ -6,6 +6,20 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# Mailer Settings
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.perform_deliveries = true
+
+ActionMailer::Base.smtp_settings = {
+  address: ENV['EMAIL_ADRS'],
+  port: "587",
+  domain: ENV['EMAIL_DOMAIN'],
+  user_name: ENV['EMAIL_UNME'],
+  password: ENV['EMAIL_PW'],
+  authentication: 'plain',
+  enable_starttls_auto: true
+}
+
 module Superclass
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
