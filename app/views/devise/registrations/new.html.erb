@@ -31,9 +31,10 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
   
-  <%= simple_form_for @user do |f| %>
-    <%= f.input :role, collection: ["Student", "Organization Leader"] %>
-  <% end %>
+	<div class="field">
+    <%= f.label :role %><br />
+		<%= select(:user, :role, [['Student', 1], ['Organization Leader', 2]]) %>
+	</div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
