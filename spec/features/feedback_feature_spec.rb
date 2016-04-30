@@ -17,6 +17,7 @@ feature "Feedback Page" do
 	end
 
 	scenario "user is signed in" do
+		visit feedback_path
 		#TODO: For test, make individual sign in
 		fill_in 'Message', with: 'manchester is red'
 		expect{
