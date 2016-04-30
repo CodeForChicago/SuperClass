@@ -5,17 +5,15 @@ Rails.application.routes.draw do
   resources :questions
   match '/feedback',     to: 'feedback#new',             via: 'get'
   resources "feedback", only: [:new, :create]
-    
 
   match '/feedback', to: 'feedback#new', via: 'get'
 	match '/feedbacks', to: 'feedback#new', via: 'get'
 	match '/feedbacks', to: 'feedback#create', via: 'post'
 
-
   resources :feedback
 	resources :lessons
 
-  # The priority is based upon order of creation: first created -> highest priority.
+  # Priority is based upon order of creation: first created -> highest priority
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
