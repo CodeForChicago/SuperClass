@@ -49,7 +49,7 @@ group :development, :test do
   gem 'better_errors'
 
   # pry for debugging with irb
-  gem 'pry'
+  gem 'pry-byebug'
 
   gem 'factory_girl_rails'
   gem 'faker'
