@@ -11,9 +11,11 @@ class FeedbackController < ApplicationController
   
   def create
       @feedback = Feedback.new(params[:feedback])
-      binding.pry
+      #TODO: we can have the view render the appropriate form (i.e.: only display
+      # email and name fields only for not signed-in users) and then the controller
+      # can check to see if the fields are there or not, and if not, fill in the 
+      # user's info, without exposing it to the world in the HTML of the view page
       if current_user != nil
-        binding.pry
       end 
         @feedback["user"] = user
       @feedback.request = request
