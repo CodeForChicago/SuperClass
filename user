@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /home/ubuntu/workspace/codeforchicago/superclass/spec/features/orgleader_add_feature_spec.rb @ line 6 :
+
+     [1;34m1[0m: [1;34m# Feature: If user is orgleader then user can add student[0m
+     [1;34m2[0m: 
+     [1;34m3[0m: feature [31m[1;31m'[0m[31mAdd Student[1;31m'[0m[31m[0m, [33m:devise[0m [32mdo[0m
+     [1;34m4[0m:   
+     [1;34m5[0m:   scenario [31m[1;31m'[0m[31mif you are org leader then you can add student[1;31m'[0m[31m[0m [32mdo[0m 
+ =>  [1;34m6[0m:     binding.pry
+     [1;34m7[0m:     visit new_student_path
+     [1;34m8[0m:     expect(current_user.org_leader?).to be_true
+     [1;34m9[0m:     click_button [31m[1;31m'[0m[31mAdd Student[1;31m'[0m[31m[0m
+    [1;34m10[0m:     [1;34m#Discuss with Juan what we get when we select roles[0m
+    [1;34m11[0m:     expect(page.status_code).to eq([1;34m200[0m)
+
