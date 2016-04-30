@@ -33,7 +33,7 @@
   
 	<div class="field">
     <%= f.label :role %><br />
-		<%= select(:user, :role, [['Student', 1], ['Organization Leader', 2]]) %>
+		<%= select(:user, :role, [['Student', :student], ['Organization Leader', :org_leader]]) %>
 	</div>
 
   <div class="actions">
