@@ -15,5 +15,17 @@ feature "Feedback Page" do
                             message and try to improve our website soon.'
 		
 	end
+
+	scenario "user is signed in" do
+		#TODO: For test, make individual sign in
+		fill_in 'Message', with: 'manchester is red'
+		expect{
+		click_button 'Send message'
+		}.to change{ActionMailer::Base.deliveries.count}.by(1)
+		expect(page).to have_content 'We appreciate your feedback! We will review your
+                            message and try to improve our website soon.'
+		#TODO: expect last message sender to be this user
+
+	end
 	
 end 
