@@ -8,9 +8,12 @@ feature "Feedback Page" do
 		fill_in 'Email', with: 'manchesterisred@cfc.com'
 		fill_in 'Name', with: 'wayne rooney'
 		fill_in 'Message', with: 'manchester is red'
+		expect{
 		click_button 'Send message'
+		}.to change{ActionMailer::Base.deliveries.count}.by(1)
 		expect(page).to have_content 'We appreciate your feedback! We will review your
                             message and try to improve our website soon.'
+		
 	end
 	
 end 
