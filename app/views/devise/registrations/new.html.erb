@@ -13,11 +13,6 @@
     <%= f.text_field :last_name, autofocus: true %>
   </div>
   
-  <%= simple_form_for @user do |f| %>
-    <%= f.input :role, collection: ["Student", "Organization Leader"] %>
-  <% end %>
-  
-  
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -35,6 +30,10 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+  
+  <%= simple_form_for @user do |f| %>
+    <%= f.input :role, collection: ["Student", "Organization Leader"] %>
+  <% end %>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
