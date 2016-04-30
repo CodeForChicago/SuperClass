@@ -23,6 +23,8 @@ require 'factory_girl'
 require 'rails_helper'
 require 'capybara/rspec'
 
+#For mailing specs
+ActionMailer::Base.delivery_method = :test
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

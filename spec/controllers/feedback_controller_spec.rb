@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 describe FeedbackController, type: :controller do
     describe 'GET / new' do
         it 'return an http success' do
