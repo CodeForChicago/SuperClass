@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     
 
   match '/feedback', to: 'feedback#new', via: 'get'
+	match '/feedbacks', to: 'feedback#new', via: 'get'
+	match '/feedbacks', to: 'feedback#create', via: 'post'
+
+
   resources :feedback
 	resources :lessons
 
@@ -29,6 +33,7 @@ Rails.application.routes.draw do
   # Example resource route with options:
   #   resources :products do
   #     member do
+	#
   #       get 'short'
   #       post 'toggle'
   #     end
