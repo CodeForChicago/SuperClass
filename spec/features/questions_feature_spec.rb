@@ -3,8 +3,6 @@ require 'spec_helper'
 feature "Questions Page" do
     let!(:question1) {FactoryGirl.create(:question)}
     let!(:question2) {FactoryGirl.create(:question)}
-    FactoryGirl.build(:comment, question: question1)
-    FactoryGirl.build(:comment, question: question1)
     
     scenario "viewing questions page" do
         visit questions_path
@@ -21,6 +19,9 @@ feature "Questions Page" do
     end
     
     scenario "viewing question page" do
+        FactoryGirl.create(:comment, question: question1)
+        FactoryGirl.create(:comment, question: question1)
+        
         visit "questions/#{question1.id}"
         
         expect(page).to have_content(question1.title)
