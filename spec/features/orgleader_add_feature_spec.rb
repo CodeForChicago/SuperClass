@@ -3,7 +3,6 @@
 feature 'Add Student', :devise do
   
   scenario 'if you are org leader then you can add student' do 
-    binding.pry
     visit new_student_path
     expect(current_user.org_leader?).to be_true
     click_button 'Add Student'
