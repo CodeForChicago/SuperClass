@@ -26,5 +26,5 @@ class FeedbackController < ApplicationController
         flash.now[:error] = 'Cannot send message.'
         render :new
       end
-  end 
+  end
 end 
