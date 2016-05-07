@@ -1,4 +1,4 @@
-require "pry"
+# require "pry"
 
 class FeedbackController < ApplicationController
  # before_action :authenticate_user!, only: [:create]

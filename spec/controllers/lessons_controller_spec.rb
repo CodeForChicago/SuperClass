@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'pry'
+# require 'pry'
 
 RSpec.describe LessonsController, type: :controller do
 

@@ -1,4 +1,4 @@
-require "pry"
+# require "pry"
 
 class LessonsController < ApplicationController
 	def index
