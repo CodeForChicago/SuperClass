@@ -1,7 +1,7 @@
 class Feedback < MailForm::Base
-  attribute :name, :validate => true
-  attribute :email, :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
-  attribute :message, presence: true
+  attribute :name, :validate => true, presence: true
+  attribute :email, :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i, presence: true
+  attribute :message, :validate => true
   attribute :nickname, :captcha => true
   
   # Declare the email headers. It accepts anything the mail method
