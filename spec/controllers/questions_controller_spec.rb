@@ -33,4 +33,16 @@ describe QuestionsController, type: :controller do
            expect(assigns[:question]).to eq(question2)
        end
     end
+    
+    describe 'GET /new' do
+        it 'returns an http success' do
+            get :new
+            expect(response).to be_success
+        end
+        
+        it 'returns a form' do
+            get :new
+            expect(assigns[:question]).to be_a(Question)
+        end
+    end
 end
