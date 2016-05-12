@@ -13,7 +13,6 @@ feature "Feedback Page" do
 		}.to change{ActionMailer::Base.deliveries.count}.by(1)
 		expect(page).to have_content 'We appreciate your feedback! We will review your
                             message and try to improve our website soon.'
-		
 	end
 
 	scenario "user is signed in" do
@@ -26,7 +25,7 @@ feature "Feedback Page" do
 		expect(page).to have_content 'We appreciate your feedback! We will review your
                             message and try to improve our website soon.'
 		#TODO: expect last message sender to be this user
-
 	end
 	
+	#TODO: write test to ensure that email, name, and message fields are filled
 end 
