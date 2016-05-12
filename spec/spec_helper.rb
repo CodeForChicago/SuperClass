@@ -22,6 +22,7 @@ require 'rubygems'
 require 'factory_girl'
 require 'rails_helper'
 require 'capybara/rspec'
+require 'database_cleaner'
 
 
 RSpec.configure do |config|
@@ -76,6 +77,18 @@ RSpec.configure do |config|
   # test failures related to randomization by passing the same `--seed` value
   # as the one that triggered the failure.
   Kernel.srand config.seed
+
+	# for database_cleaner
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
 
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
