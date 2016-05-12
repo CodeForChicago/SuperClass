@@ -35,4 +35,10 @@ feature "Questions Page" do
             expect(page).to have_content(comment.user.last_name)
         end
     end
+    
+    scenario "making a new question" do
+        visit "questions/new"
+        fill_in 'Title', with: 'Post a new question'
+        fill_in 'Body', with: 'This is how you post a new question'
+    end
 end
