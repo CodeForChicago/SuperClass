@@ -4,8 +4,7 @@ class Feedback < MailForm::Base
   attribute :message, :validate => true
   attribute :nickname, :captcha => true
   
-  # Declare the email headers. It accepts anything the mail method
-  # in ActionMailer accepts
+  # Email headers. Accepts anything the mail method in ActionMailer accepts
   def headers
     {
       :subject => "CFC Feedback Form",
