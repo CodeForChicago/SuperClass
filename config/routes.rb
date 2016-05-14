@@ -1,25 +1,15 @@
 Rails.application.routes.draw do
-
-  root to: "home#index"
-  devise_for :users
-  resources :lessons
-  resources :questions
-  match '/feedback',     to: 'feedback#new',             via: 'get'
-  resources "feedback", only: [:new, :create]
-
-  match '/feedback', to: 'feedback#new', via: 'get'
-	match '/feedbacks', to: 'feedback#new', via: 'get'
-	match '/feedbacks', to: 'feedback#create', via: 'post'
-
-  resources :feedback
-	resources :lessons
-
-  # Priority is based upon order of creation: first created -> highest priority
-
+  
   root to: "lessons#index"
   devise_for :users, :controllers => { registrations: 'registrations' }
 	resources :lessons
 	resources :questions
+	
+	match '/feedback', to: 'feedback#new', via: 'get'
+	match '/feedbacks', to: 'feedback#new', via: 'get'
+	match '/feedbacks', to: 'feedback#create', via: 'post'
+  resources "feedback", only: [:new, :create]
+
     
   # The priority is based upon order of creation: first created -> highest priority.
 
