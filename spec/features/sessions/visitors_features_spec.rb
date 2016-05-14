@@ -12,7 +12,8 @@ feature 'Sign Up' do
         visit new_user_registration_path
 				sign_up_with(email, password, password, f_name, l_name)
  				click_button 'Sign up'
-        expect(page).to have_content(/.*devise.registrations.signed_up.*|.*devise.registrations.signed_up_but_unconfirmed.*/)
+ 				txts = [I18n.t( 'devise.registrations.signed_up'), I18n.t( 'devise.registrations.signed_up_but_unconfirmed')]
+  			expect(page).to have_content(/.*#{txts[0]}.*|.*#{txts[1]}.*/)
     end 
     
     scenario 'visitor cannot sign up without a valid email address' do

@@ -1,0 +1,7 @@
+<ul>
+    <% @questions.each do |question| %>
+        <li><%= question.title %></li>
+        <li><%= question.body %></li>
+        <li><%= question.user.first_name + " " + question.user.last_name%></li>
+    <% end %>
+</ul>

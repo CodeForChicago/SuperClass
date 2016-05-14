@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root to: "home#index"
   devise_for :users
   resources :lessons
@@ -14,6 +15,14 @@ Rails.application.routes.draw do
 	resources :lessons
 
   # Priority is based upon order of creation: first created -> highest priority
+
+  root to: "lessons#index"
+  devise_for :users, :controllers => { registrations: 'registrations' }
+	resources :lessons
+	resources :questions
+    
+  # The priority is based upon order of creation: first created -> highest priority.
+
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

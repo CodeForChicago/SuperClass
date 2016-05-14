@@ -2,11 +2,12 @@ require 'spec_helper'
 # require 'pry'
 
 RSpec.describe LessonsController, type: :controller do
+		let(:lesson1) {FactoryGirl.create(:lesson)}
+		let(:lesson2) {FactoryGirl.create(:lesson)}
+		let(:lesson3) {FactoryGirl.create(:lesson)}
 
-	let(:lesson1) {FactoryGirl.create(:lesson)}
-	let(:lesson2) {FactoryGirl.create(:lesson, body: "Mashed potatoes")}
+	describe 'GET / index' do
 
-	describe 'GET / index', :focus => true do
 		it 'returns an http success' do
 			get :index
 			expect(response).to be_success
@@ -14,11 +15,8 @@ RSpec.describe LessonsController, type: :controller do
 
 		it 'returns all the lessons' do
 			get :index 
-			expect(assigns[:lessons]).to eq([])
-			# this causes the lessons to be created 
 			lessons = [lesson1, lesson2]
-			# use `.reload` to force a new query:
-			expect(assigns[:lessons].reload).to eq(lessons)
+			expect(assigns[:lessons]).to eq(lessons)
 		end
 	end
 
@@ -51,11 +49,6 @@ RSpec.describe LessonsController, type: :controller do
 
 	describe 'POST / create' do
 		it 'returns an http created when lesson saved'
-			# get :create, author: lesson1.author, title: lesson1.title,\
-			# 		body: lesson1.body, url: lesson1.url
-			# returns http status code 201?
-			# response.code gets http code
-			# expect(response.code).to eq("201")
 
 		it 'returns an http failed when lesson not saved'
 
@@ -65,9 +58,7 @@ RSpec.describe LessonsController, type: :controller do
 
 		it 'keeps the admin on the form to create a new one'
 		
-		# this one may be taken care of by the lesson model, so we may not need to
-		# test it here
-		it 'doesn\'t create a duplicate lesson'
+		it 'does not create a duplicate lesson'
 
 	end
 end

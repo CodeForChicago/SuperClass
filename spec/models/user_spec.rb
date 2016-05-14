@@ -36,4 +36,9 @@ describe User, type: :model do
 		expect(FactoryGirl.build(:user, role: :admin)).to be_valid
 	end
 
+	it 'has many questions' do
+		user1 = FactoryGirl.create(:user)
+		question1 = FactoryGirl.create(:question, user: user1)
+		expect(user1.questions).to match_array([question1])
+	end
 end

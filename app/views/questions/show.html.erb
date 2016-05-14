@@ -1,0 +1,12 @@
+<h><%= @question.title %></h>
+<h3>Posted by: <%= @question.user.first_name%> <%=@question.user.last_name%></h3>
+<p><%= @question.body%></p>
+<br/>
+<h2>Comments:</h2>
+<ul>
+    <% @comments.each do |comment| %>
+        <li> <%= comment.user.first_name + " " + comment.user.last_name%></li>
+        <li> <%= comment.body %></li>
+        <br/>
+    <% end %>
+</ul>
