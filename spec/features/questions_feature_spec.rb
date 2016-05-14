@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "Questions Page" do
+feature "Questions Page", :focus do
     let!(:question1) {FactoryGirl.create(:question)}
     let!(:question2) {FactoryGirl.create(:question)}
     
