@@ -1,6 +1,9 @@
+RSpec.configure do |c|
+	  c.include Helpers::SessionsHelper
+end
+
 require 'spec_helper'
 # require "pry"
-
 feature "Feedback Page" do
 	
 	scenario "User omitted email" do
@@ -48,11 +51,14 @@ feature "Feedback Page" do
                             message and try to improve our website soon.'
 	end
 
-	scenario "user is signed in" do
+	scenario "user is signed in" ,:focus do
+    visit new_user_session_path
+    user = FactoryGirl.create(:user)
+    signin(user.email, user.password)
+    click_button 'Log in'
+    expect(page).to have_content I18n.t "devise.sessions.signed_in"
+    
 		visit feedback_path
-		#TODO: For test, make individual sign in
-		fill_in 'Email', with: 'manchesterisred@cfc.com'
-		fill_in 'Name', with: 'wayne rooney'
 		fill_in 'Message', with: 'manchester is red'
 		expect{
 		click_button 'Send message'
