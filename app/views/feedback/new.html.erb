@@ -22,13 +22,13 @@
   <% else %>
     <div align="center">
       <h3>Send A message to Us</h3>
-      <%= simple_form_for @feedback, :html => {:class => 'form-horizontal' } do |f| %>
-        <%= f.input :name, :as => :hidden, :input_html => { :value => current_user.name }%>
-        <%= f.input :email, :as => :hidden, :input_html => { :value => current_user.email } %>
-        <%= f.input :message, :as => :text, :required => true %>
+      <%= simple_form_for @feedback, :html => {:class => 'form-horizontal' } do |x| %>
+        <%= x.input :name, :as => :hidden, :input_html => { :value => current_user.name }%>
+        <%= x.input :email, :as => :hidden, :input_html => { :value => current_user.email } %>
+        <%= x.input :message, :as => :text, :required => true %>
         <div>
           </br>
-          <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+          <%= x.button :submit, 'Send message', :class=> "btn btn-primary" %>
         </div>
       <% end %>
       <div>
