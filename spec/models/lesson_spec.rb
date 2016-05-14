@@ -34,7 +34,7 @@ RSpec.describe Lesson, type: :model do
 		expect(FactoryGirl.build(:lesson, title: lesson3.title, author: lesson3.author)).to_not be_valid
 	end
 	
-	it 'returns descriptive error messages', :focus do 
+	it 'returns descriptive error messages' do 
 		# Error message for duplicate urls
 		lesson1 = FactoryGirl.create(:lesson)
 		lesson2 = FactoryGirl.build(:lesson, url: lesson1.url)

@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe QuestionsController, type: :controller do
-    question1 = FactoryGirl.create(:question)
-    question2 = FactoryGirl.create(:question)
+    let(:question1) {FactoryGirl.create(:question)}
+    let(:question2) {FactoryGirl.create(:question)}
     
     describe 'GET / index' do
         it 'returns an http success' do
