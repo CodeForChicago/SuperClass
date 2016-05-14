@@ -1,4 +1,4 @@
-# require "pry"
+require "pry"
 
 class FeedbackController < ApplicationController
  # before_action :authenticate_user!, only: [:create]
@@ -12,12 +12,11 @@ class FeedbackController < ApplicationController
   
   def create
       @feedback = Feedback.new(params[:feedback])
-      #TODO: make the view render the appropriate fields (i.e.: only display
-      # email and name fields for not signed-in users) and then the controller
+      #TODO: we can have the view render the appropriate form (i.e.: only display
+      # email and name fields only for not signed-in users) and then the controller
       # can check to see if the fields are there or not, and if not, fill in the 
       # user's info, without exposing it to the world in the HTML of the view page
-      if current_user != nil
-      end 
+
       @feedback.request = request
       if @feedback.deliver
         flash.now[:notice] = 'We appreciate your feedback! We will review your
@@ -26,5 +25,5 @@ class FeedbackController < ApplicationController
         flash.now[:error] = 'Cannot send message.'
         render :new
       end
-  end
+  end 
 end 
