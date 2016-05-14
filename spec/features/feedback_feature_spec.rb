@@ -47,11 +47,11 @@ feature "Feedback Page" do
 		expect{
 		click_button 'Send message'
 		}.to change{ActionMailer::Base.deliveries.count}.by(1)
-		expect(page).to have_content 'We appreciate your feedback! We will review your
-                            message and try to improve our website soon.'
+		expect(page).to have_content('We appreciate your feedback! We will review your
+                            message and try to improve our website soon.', count: 1)
 	end
 
-	scenario "user is signed in" ,:focus do
+	scenario "user is signed in" do
     visit new_user_session_path
     user = FactoryGirl.create(:user)
     signin(user.email, user.password)
@@ -63,14 +63,9 @@ feature "Feedback Page" do
 		expect{
 		click_button 'Send message'
 		}.to change{ActionMailer::Base.deliveries.count}.by(1)
-		expect(page).to have_content 'We appreciate your feedback! We will review your
-                            message and try to improve our website soon.'
-		#TODO: expect last message sender to be this user
+		expect(page).to have_content('We appreciate your feedback! We will review your
+                            message and try to improve our website soon.', count: 1)
+
 	end
 
-	#TODO: write test to ensure that email, name, and message fields are filled
-	# scenario "User is required to fill all fields" do
-	# 	visit feedback_path
-	# 	fill_in 'Message', with: 'manchester is red'
-	# end
 end
