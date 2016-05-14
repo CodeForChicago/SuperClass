@@ -15,5 +15,8 @@ class User < ActiveRecord::Base
 	def set_default_role
 	  self.role ||= :student
 	end 
+	def name 
+	  self.first_name + " " + self.last_name
+	end 
 
 end
