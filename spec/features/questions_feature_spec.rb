@@ -37,8 +37,21 @@ feature "Questions Page", :focus do
     end
     
     scenario "making a new question" do
-        visit "questions/new"
-        fill_in 'Title', with: 'Post a new question'
-        fill_in 'Body', with: 'This is how you post a new question'
+        # log in
+        visit new_user_session_path
+        signin('stevo@fakemail.com', 'password123')
+        click_button 'Log in'
+        
+        # make a question
+        title = 'Post a new question'
+        body = 'This is how you post a new question'
+        
+        visit "#{questions_path}/new"
+        fill_in 'Title', with: title
+        fill_in 'Body', with: body
+        click_button 'Post Question'
+        
+        expect(page).to have_content(title)
+        expect(page).to have_content(body)
     end
 end
