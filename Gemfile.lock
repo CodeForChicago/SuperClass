@@ -99,16 +99,11 @@ GEM
     json (1.8.3)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
-<<<<<<< HEAD
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mail_form (1.5.1)
       actionmailer (>= 3.2, < 5)
       activemodel (>= 3.2, < 5)
-=======
-    mail (2.6.4)
-      mime-types (>= 1.16, < 4)
->>>>>>> master
     method_source (0.8.2)
     mime-types (3.0)
       mime-types-data (~> 3.2015)
@@ -217,14 +212,9 @@ GEM
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-<<<<<<< HEAD
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-=======
-    uglifier (3.0.0)
-      execjs (>= 0.3.0, < 3)
->>>>>>> master
     warden (1.2.6)
       rack (>= 1.0)
     watchr (0.7)
