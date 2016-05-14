@@ -34,15 +34,17 @@ describe QuestionsController, type: :controller do
        end
     end
     
-    describe 'GET /new' do
-        it 'returns an http success' do
-            get :new
-            expect(response).to be_success
-        end
-        
-        it 'returns a form' do
+    describe 'GET /new', :focus do
+        it 'returns a form if user signed in' do
+            sign_in FactoryGirl.create(:user)
             get :new
             expect(assigns[:question]).to be_a(Question)
+        end
+        
+        subject {get :new}
+        
+        it 'redirects to sign in if user not signed in' do
+            expect(subject).to redirect_to(new_user_session_path)
         end
     end
 end
