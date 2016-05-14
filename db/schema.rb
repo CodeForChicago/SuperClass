@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 20160430191440) do
   add_index "comments", ["question_id"], name: "index_comments_on_question_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
+  create_table "contact_form", force: :cascade do |t|
+    t.string "nickname"
+    t.string "name"
+    t.string "email"
+    t.text   "message"
+  end
+
   create_table "lessons", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
