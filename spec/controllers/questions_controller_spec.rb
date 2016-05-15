@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe QuestionsController, type: :controller do
+describe QuestionsController, :focus, type: :controller do
     let(:question1) {FactoryGirl.create(:question)}
     let(:question2) {FactoryGirl.create(:question)}
     
@@ -34,7 +34,7 @@ describe QuestionsController, type: :controller do
        end
     end
     
-    describe 'GET /new', :focus do
+    describe 'GET /new' do
         it 'returns a form if user signed in' do
             sign_in FactoryGirl.create(:user)
             get :new
@@ -44,6 +44,29 @@ describe QuestionsController, type: :controller do
         subject {get :new}
         
         it 'redirects to sign in if user not signed in' do
+            expect(subject).to redirect_to(new_user_session_path)
+        end
+    end
+    
+    describe 'POST /create' do
+        let(:current_user) {FactoryGirl.create(:user)}
+        subject {post :create, question: {user: current_user.id, title:"Hey", body:"Hey"}}
+        
+        describe 'user signed in' do
+            
+            before(:each) do
+                sign_in current_user
+            end
+            
+            it 'creates a new question' do
+                expect{subject}.to change(Question,:count).by(1)
+            end
+            
+            it 'redirects to the questions page' do
+                expect(subject).to redirect_to(questions_path)
+            end
+        end
+        it 'redirects to log in if not signed in' do
             expect(subject).to redirect_to(new_user_session_path)
         end
     end

@@ -16,7 +16,15 @@ class QuestionsController < ApplicationController
     end
     
     def create
-        @question = Question.new(params[:question])
+        @question = Question.new(question_params)
+        #binding.pry
+        @question.save!
         redirect_to questions_path
+    end
+    
+private
+    def question_params
+        in_params = params.require(:question)
+        in_params.permit(:user, :title, :body)
     end
 end
