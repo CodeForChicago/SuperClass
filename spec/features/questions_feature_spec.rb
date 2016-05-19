@@ -3,6 +3,7 @@ require 'spec_helper'
 feature "Questions Page", :focus do
     let!(:question1) {FactoryGirl.create(:question)}
     let!(:question2) {FactoryGirl.create(:question)}
+    let(:user1) {FactoryGirl.create(:user, email: 'stevo@fakem.com', password: 'password123')}
     
     scenario "viewing questions page" do
         visit questions_path
@@ -37,17 +38,19 @@ feature "Questions Page", :focus do
     end
     
     scenario "making a new question" do
+        
         # log in
         visit new_user_session_path
-        signin('stevo@fakemail.com', 'password123')
+        signin(user1.email, 'password123')
         click_button 'Log in'
         
         # make a question
         title = 'Post a new question'
         body = 'This is how you post a new question'
         
-        visit "#{questions_path}/new"
+        visit new_question_path
         fill_in 'Title', with: title
+        # find('.title').set(title)
         fill_in 'Body', with: body
         click_button 'Post Question'
         
