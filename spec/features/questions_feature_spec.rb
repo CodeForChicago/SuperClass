@@ -4,6 +4,7 @@ feature "Questions Page", :focus do
     let!(:question1) {FactoryGirl.create(:question)}
     let!(:question2) {FactoryGirl.create(:question)}
     let(:user1) {FactoryGirl.create(:user, email: 'stevo@fakem.com', password: 'password123')}
+    let(:user2) {FactoryGirl.create(:user, first_name: 'Diego', last_name: 'lopez',role: 'student', email: 'thisisit@gmail.com', password: 'password456')}
     
     scenario "viewing questions page" do
         visit questions_path
@@ -41,7 +42,7 @@ feature "Questions Page", :focus do
         
         # log in
         visit new_user_session_path
-        signin(user1.email, 'password123')
+        signin(user2.email, 'password456')
         click_button 'Log in'
         
         # make a question
@@ -50,7 +51,6 @@ feature "Questions Page", :focus do
         
         visit new_question_path
         fill_in 'Title', with: title
-        # find('.title').set(title)
         fill_in 'Body', with: body
         click_button 'Post Question'
         
