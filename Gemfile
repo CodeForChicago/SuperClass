@@ -13,6 +13,7 @@ gem 'coffee-rails', '~> 4.1.0'
 #user session
 gem 'devise'
 
+gem 'react-rails', '~> 1.6.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -22,9 +23,10 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# to create a simple form
-# gem 'mail_form'
-gem 'simple_form'
+# for mailing feedback
+ gem 'simple_form'
+ gem "mail_form", ">= 1.3.0"
+
 
 # for testing both here and on production
 gem 'rspec-rails', '~> 3.0'
@@ -34,6 +36,10 @@ group :development do
   gem 'web-console', '~> 2.0'
 end
 
+group :test do
+	gem 'database_cleaner'
+
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -48,15 +54,12 @@ group :development, :test do
   gem 'better_errors'
 
   # pry for debugging with irb
-  gem 'pry'
+  gem 'pry-byebug'
 
   gem 'factory_girl_rails'
   gem 'faker'
   
   gem 'watchr'
-  
-  # running faster tests
-  gem 'spring'
 end
 
 gem 'rails_12factor', group: :production
