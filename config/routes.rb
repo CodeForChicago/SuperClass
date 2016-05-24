@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
 	resources :lessons
 	resources :questions
+	resources :profiles
 	
 	match '/feedback', to: 'feedback#new', via: 'get'
 	match '/feedbacks', to: 'feedback#new', via: 'get'
