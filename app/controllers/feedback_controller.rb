@@ -1,11 +1,11 @@
-require "pry"
+# require "pry"
 
 class FeedbackController < ApplicationController
  # before_action :authenticate_user!, only: [:create]
   
   include Devise::Controllers::Helpers
   helper_method :current_user
-  
+
   def new
     @feedback = Feedback.new
   end

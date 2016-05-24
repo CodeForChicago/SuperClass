@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 	resources :lessons
 	resources :questions
 # <<<<<<< HEAD
-# 	resources :users, only: [:new, :create]
-# 	resources :students
+	resources :users, only: [:new, :create]
+	resources :students
 # =======
 	
 	match '/feedback', to: 'feedback#new', via: 'get'
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 	match '/feedbacks', to: 'feedback#create', via: 'post'
   resources "feedback", only: [:new, :create]
 
+  # match '/new_student_path', to: 'registrations#new', via: 'get'
 # >>>>>>> master
     
   # The priority is based upon order of creation: first created -> highest priority.
