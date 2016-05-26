@@ -22,7 +22,7 @@ feature 'Add Student', :devise do
   # we should be able to create the user, then access it from the session
   # store with User.method
   scenario 'if you are org leader then you can add student' do 
-    binding.pry
+    # binding.pry
     visit new_user_registration_path
 		sign_up_with(email, password, password, f_name, l_name, 'Organization Leader')
  		click_button 'Sign up'
