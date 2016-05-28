@@ -17,7 +17,7 @@ class QuestionsController < ApplicationController
     
     def create
         @question = Question.new(question_params)
-        #binding.pry
+        # binding.pry
         @question.save!
         redirect_to questions_path
     end
@@ -25,6 +25,12 @@ class QuestionsController < ApplicationController
 private
     def question_params
         in_params = params.require(:question)
+        user_id = in_params[:user].to_i
+        # find the user given a particular id
+        selected_user = User.find(user_id)
         in_params.permit(:user, :title, :body)
+        out_params = in_params.permit(:title, :body)
+        #binding.pry
+        #out_params[:user] = user_id#selected_user 
     end
 end
