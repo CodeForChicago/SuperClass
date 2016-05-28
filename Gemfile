@@ -24,8 +24,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # for mailing feedback
-# gem 'mail_form'
-gem 'simple_form'
+ gem 'simple_form'
+ gem "mail_form", ">= 1.3.0"
+
 
 # for testing both here and on production
 gem 'rspec-rails', '~> 3.0'
@@ -53,15 +54,12 @@ group :development, :test do
   gem 'better_errors'
 
   # pry for debugging with irb
-  gem 'pry'
+  gem 'pry-byebug'
 
   gem 'factory_girl_rails'
   gem 'faker'
   
   gem 'watchr'
-  
-  # running faster tests
-  gem 'spring'
 end
 
 gem 'rails_12factor', group: :production

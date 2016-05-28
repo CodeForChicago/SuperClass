@@ -23,7 +23,13 @@ require 'factory_girl'
 require 'rails_helper'
 require 'capybara/rspec'
 require 'database_cleaner'
+require 'bcrypt'
 
+# make BCrypt password stuff as fast as possible for testing
+BCrypt::Engine::DEFAULT_COST = 1
+
+#For mailing specs
+ActionMailer::Base.delivery_method = :test
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

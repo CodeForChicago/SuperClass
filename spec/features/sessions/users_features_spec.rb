@@ -45,3 +45,27 @@ feature 'Sign in', :devise do
   end
   
 end
+
+
+# Feature: Sign out
+#   As a user
+#   I want to sign out
+#   So I can protect my account from unauthorized access
+
+feature 'Sign out', :devise do
+
+  # Scenario: User signs out successfully given he is signed in
+  scenario 'user signs out successfully' do
+    #binding.pry
+    visit new_user_session_path
+    user = FactoryGirl.create(:user)
+    signin(user.email, user.password)
+    click_button 'Log in'
+    expect(page).to have_content I18n.t 'devise.sessions.signed_in'
+    click_link 'Logout'
+    expect(page).to have_content I18n.t 'devise.sessions.signed_out'
+  end
+
+end
+
+

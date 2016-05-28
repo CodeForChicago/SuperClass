@@ -1,3 +1,6 @@
+require 'spec_helper'
+# require 'pry'
+
 RSpec.describe LessonsController, type: :controller do
 		let(:lesson1) {FactoryGirl.create(:lesson)}
 		let(:lesson2) {FactoryGirl.create(:lesson)}
@@ -35,12 +38,18 @@ RSpec.describe LessonsController, type: :controller do
 	end
 
 	describe 'GET /new' do
-		it 'returns an http success when form loaded'		
-		it 'returns a valid form, with fields for all necessary information'
+		it 'returns an http success when form loaded' do
+			get :new
+			expect(response).to be_success
+		end
+		
+		it 'returns a valid form, with fields for all necessary information' 
+		
 	end
 
 	describe 'POST / create' do
-		it 'returns an http created when lesson saved' 
+		it 'returns an http created when lesson saved'
+
 		it 'returns an http failed when lesson not saved'
 
 		it 'returns model message when lesson not saved'

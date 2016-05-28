@@ -41,4 +41,9 @@ describe User, type: :model do
 		question1 = FactoryGirl.create(:question, user: user1)
 		expect(user1.questions).to match_array([question1])
 	end
+	it 'has a name' do
+		user1 = FactoryGirl.create(:user, first_name:"Shelly", last_name:"Long")
+
+		expect(user1.name).to eql(user1.first_name + " " + user1.last_name)
+	end 
 end
