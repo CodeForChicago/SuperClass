@@ -28,7 +28,7 @@ feature 'Add Student', :devise do
  		click_button 'Sign up'
     #if ((User.first.role) is 'Organization Leader')
     if (expect(User.where(email: email).first.role).to eq("org_leader"))
-      visit new_student_path
+      #visit new_student_path
       click_button 'Add Student'
       sign_up_with(student_email, student_password, student_password, student_f_name,
                    student_l_name, 'Student')

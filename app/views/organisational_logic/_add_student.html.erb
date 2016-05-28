@@ -1,0 +1,6 @@
+<% if user_signed_in? and current_user.role == 'org_leader' %>
+  <li>
+    <%= link_to('Add Student', new_user_session_path) %>
+  </li>
+<% end %> 
+
