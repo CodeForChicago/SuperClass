@@ -1,0 +1,17 @@
+=> [32m#<User:0x0000000a7b1fb0[0m
+ id: [1;34m9[0m,
+ created_at: [1;34;4mThu[0m, [1;34m26[0m [1;34;4mMay[0m [1;34m2016[0m [1;34m01[0m:[1;34m53[0m:[1;34m40[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+ updated_at: [1;34;4mThu[0m, [1;34m26[0m [1;34;4mMay[0m [1;34m2016[0m [1;34m01[0m:[1;34m53[0m:[1;34m40[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+ email: [31m[1;31m"[0m[31mthisisit@gmail.com[1;31m"[0m[31m[0m,
+ encrypted_password: [31m[1;31m"[0m[31m$2a$04$2ZGKAcMMPo4H9V5MCHY8uOu1IsxAJTb7jcOtPGT9x9ri8gZ0c2c8C[1;31m"[0m[31m[0m,
+ reset_password_token: [1;36mnil[0m,
+ reset_password_sent_at: [1;36mnil[0m,
+ remember_created_at: [1;36mnil[0m,
+ sign_in_count: [1;34m1[0m,
+ current_sign_in_at: [1;34;4mThu[0m, [1;34m26[0m [1;34;4mMay[0m [1;34m2016[0m [1;34m01[0m:[1;34m53[0m:[1;34m40[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+ last_sign_in_at: [1;34;4mThu[0m, [1;34m26[0m [1;34;4mMay[0m [1;34m2016[0m [1;34m01[0m:[1;34m53[0m:[1;34m40[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+ current_sign_in_ip: [32m#<IPAddr: IPv4:127.0.0.1/255.255.255.255>[0m,
+ last_sign_in_ip: [32m#<IPAddr: IPv4:127.0.0.1/255.255.255.255>[0m,
+ first_name: [31m[1;31m"[0m[31mDiego[1;31m"[0m[31m[0m,
+ last_name: [31m[1;31m"[0m[31mlopez[1;31m"[0m[31m[0m,
+ role: [1;34m1[0m[32m>[0m

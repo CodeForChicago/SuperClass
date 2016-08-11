@@ -23,6 +23,10 @@ require 'factory_girl'
 require 'rails_helper'
 require 'capybara/rspec'
 require 'database_cleaner'
+require 'bcrypt'
+
+# make BCrypt password stuff as fast as possible for testing
+BCrypt::Engine::DEFAULT_COST = 1
 
 #For mailing specs
 ActionMailer::Base.delivery_method = :test
